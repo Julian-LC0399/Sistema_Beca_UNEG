@@ -23,8 +23,8 @@ class Stu_careerResource extends RestResource
     {
         return [
             'id',
-            'user_id',
-            'careers_id'
+            'Student_id',
+            'Career_id'
         ];
     }
 
