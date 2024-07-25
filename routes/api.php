@@ -1,6 +1,7 @@
 <?php
 
 use App\Rest\Controllers\InstitutionsController;
+use App\Rest\Controllers\Stu_careersController;
 use App\Rest\Controllers\StudentsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -12,3 +13,4 @@ Route::get('/user', function (Request $request) {
 
 Rest::resource('Institutions', InstitutionsController::class);
 Rest::resource('Students', StudentsController::class);
+Rest::resource('Stu_careers', Stu_careersController::class);
