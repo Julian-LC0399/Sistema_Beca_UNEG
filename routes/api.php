@@ -1,5 +1,6 @@
 <?php
 
+use App\Rest\Controllers\CareersController;
 use App\Rest\Controllers\InstitutionsController;
 use App\Rest\Controllers\Stu_careersController;
 use App\Rest\Controllers\StudentsController;
@@ -14,3 +15,4 @@ Route::get('/user', function (Request $request) {
 Rest::resource('Institutions', InstitutionsController::class);
 Rest::resource('Students', StudentsController::class);
 Rest::resource('Stu_careers', Stu_careersController::class);
+Rest::resource('Careers', CareersController::class);
