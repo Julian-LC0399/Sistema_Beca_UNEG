@@ -2,6 +2,7 @@
 
 namespace App\Rest\Resources;
 
+use App\Models\Beca;
 use App\Rest\Resource as RestResource;
 
 class BecaResource extends RestResource
@@ -11,7 +12,7 @@ class BecaResource extends RestResource
      *
      * @var class-string<\Illuminate\Database\Eloquent\Model>
      */
-    public static $model = \App\Models\Model::class;
+    public static $model = Beca::class;
 
     /**
      * The exposed fields that could be provided

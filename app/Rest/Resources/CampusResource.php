@@ -2,6 +2,7 @@
 
 namespace App\Rest\Resources;
 
+use App\Models\Campus;
 use App\Rest\Resource as RestResource;
 
 class CampusResource extends RestResource
@@ -11,7 +12,7 @@ class CampusResource extends RestResource
      *
      * @var class-string<\Illuminate\Database\Eloquent\Model>
      */
-    public static $model = \App\Models\Model::class;
+    public static $model = Campus::class;
 
     /**
      * The exposed fields that could be provided
