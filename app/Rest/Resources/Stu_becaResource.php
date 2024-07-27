@@ -23,8 +23,8 @@ class Stu_becaResource extends RestResource
     {
         return [
             'id',
-            'beca_id',
-            'student_id'
+            'Student_id',
+            'Beca_id'
         ];
     }
 
