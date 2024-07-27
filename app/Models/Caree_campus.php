@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Stu_career extends Model
+class Caree_campus extends Model
 {
     use HasFactory;
-    protected $guarded = ["Student_id ", "Career_id"];
+    protected $guarded = ["Career_id","Campus_id"];
 }
