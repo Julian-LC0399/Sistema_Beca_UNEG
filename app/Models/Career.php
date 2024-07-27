@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Career extends Model
 {
     use HasFactory;
-    protected $guarded = ["institution_id"];
-    protected $fillable = ["name"];
+    protected $guarded = ["Institution_id"];
+    protected $fillable = ["Name"];
 }

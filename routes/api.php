@@ -1,5 +1,7 @@
 <?php
 
+use App\Rest\Controllers\BecasController;
+use App\Rest\Controllers\CampusesController;
 use App\Rest\Controllers\CareersController;
 use App\Rest\Controllers\InstitutionsController;
 use App\Rest\Controllers\Stu_careersController;
@@ -16,3 +18,5 @@ Rest::resource('Institutions', InstitutionsController::class);
 Rest::resource('Students', StudentsController::class);
 Rest::resource('Stu_careers', Stu_careersController::class);
 Rest::resource('Careers', CareersController::class);
+Rest::resource('Becas', BecasController::class);
+Rest::resource('Campuses', CampusesController::class);

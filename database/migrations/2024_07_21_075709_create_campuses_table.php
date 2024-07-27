@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('campuses', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('Institution_id')->constrained();
+            $table->string('Name');
+            $table->string('Address');
             $table->timestamps();
         });
     }

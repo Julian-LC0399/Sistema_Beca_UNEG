@@ -2,17 +2,16 @@
 
 namespace App\Rest\Resources;
 
-use App\Models\Career;
 use App\Rest\Resource as RestResource;
 
-class CareerResource extends RestResource
+class BecaResource extends RestResource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var class-string<\Illuminate\Database\Eloquent\Model>
      */
-    public static $model = Career::class;
+    public static $model = \App\Models\Model::class;
 
     /**
      * The exposed fields that could be provided
@@ -24,7 +23,7 @@ class CareerResource extends RestResource
         return [
             'id',
             'Institution_id',
-            'Name'
+            'Type'
         ];
     }
 

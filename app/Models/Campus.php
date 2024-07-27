@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Campus extends Model
 {
     use HasFactory;
+    protected $guarded = ["Institution_id"];
+    protected $fillable = ["Name", "Address"];
+
 }
