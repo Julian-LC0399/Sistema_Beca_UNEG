@@ -5,10 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Campus extends Model
+class Caree_campus extends Model
 {
     use HasFactory;
-    protected $guarded = ["Institution_id"];
-    protected $fillable = ["Name", "Address"];
-
+    protected $guarded = ["Career_id","Campus_id"];
 }

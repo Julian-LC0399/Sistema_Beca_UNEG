@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('becas', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('Institution_id')->constrained();
+            $table->string('Type');
             $table->timestamps();
         });
     }
