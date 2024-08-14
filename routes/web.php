@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\BecaController;
 use App\Http\Controllers\InstitutionController;
+use App\Http\Controllers\StudentController;
+use App\Http\Requests\BecaRequest;
+use App\Rest\Controllers\StudentsController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -11,3 +15,5 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('institutions', InstitutionController::class);
+Route::resource('students', StudentController::class);
+Route::resource('becas', BecaController::class);
