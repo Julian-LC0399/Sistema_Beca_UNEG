@@ -11,7 +11,7 @@
                 <div class="card">
                     <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
                         <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} Student</span>
+                            <span class="card-title">{{ __('Show') }} Estudiante</span>
                         </div>
                         <div class="float-right">
                             <a class="btn btn-primary btn-sm" href="{{ route('students.index') }}"> {{ __('Back') }}</a>
@@ -19,33 +19,33 @@
                     </div>
 
                     <div class="card-body bg-white">
-                        
+
                                 <div class="form-group mb-2 mb20">
-                                    <strong>First Name:</strong>
+                                    <strong>Primer nombre:</strong>
                                     {{ $student->First_name }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Suname:</strong>
+                                    <strong>Apellido:</strong>
                                     {{ $student->Suname }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Identification Card:</strong>
+                                    <strong>Cédula:</strong>
                                     {{ $student->Identification_card }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Phone:</strong>
+                                    <strong>Teléfono:</strong>
                                     {{ $student->Phone }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Room Telephone:</strong>
+                                    <strong>Teléfono de habitación:</strong>
                                     {{ $student->Room_telephone }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Email:</strong>
+                                    <strong>Correo:</strong>
                                     {{ $student->Email }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Semeter:</strong>
+                                    <strong>Semestre:</strong>
                                     {{ $student->Semeter }}
                                 </div>
 

@@ -29,20 +29,20 @@
                         </div>
                     @endif
 
-                    <div class="card-body bg-white">
+                    <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>No</th>
-                                        
-									<th >First Name</th>
-									<th >Suname</th>
-									<th >Identification Card</th>
-									<th >Phone</th>
-									<th >Room Telephone</th>
-									<th >Email</th>
-									<th >Semeter</th>
+                                        <th>ID</th>
+
+									<th >Primer nombre</th>
+									<th >Apellido</th>
+									<th >Cédula</th>
+									<th >Teléfono</th>
+									<th >Teléfono de habitación</th>
+									<th >Correo</th>
+									<th >Semestre</th>
 
                                         <th></th>
                                     </tr>
@@ -51,7 +51,7 @@
                                     @foreach ($students as $student)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
+
 										<td >{{ $student->First_name }}</td>
 										<td >{{ $student->Suname }}</td>
 										<td >{{ $student->Identification_card }}</td>
@@ -63,7 +63,7 @@
                                             <td>
                                                 <form action="{{ route('students.destroy', $student->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary " href="{{ route('students.show', $student->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('students.edit', $student->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                    <a class="btn btn-sm btn-info" href="{{ route('students.edit', $student->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
