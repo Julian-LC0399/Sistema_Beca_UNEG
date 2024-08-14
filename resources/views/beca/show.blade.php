@@ -21,11 +21,11 @@
                     <div class="card-body">
 
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Institution Id:</strong>
+                                    <strong>Institución:</strong>
                                     {{ $beca->Institution_id }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Type:</strong>
+                                    <strong>Tipo:</strong>
                                     {{ $beca->Type }}
                                 </div>
 
