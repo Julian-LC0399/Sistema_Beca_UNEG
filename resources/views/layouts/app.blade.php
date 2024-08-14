@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-bs-theme="dark">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,11 +18,32 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/home') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
+
+                <a class="navbar-brand" href="{{ url('institutions/') }}">
+                    Instituciones
+                </a>
+
+                <a class="navbar-brand" href="{{ url('campuses/') }}">
+                    Sedes
+                </a>
+
+                <a class="navbar-brand" href="{{ url('careers/') }}">
+                    Carreras
+                </a>
+
+                <a class="navbar-brand" href="{{ url('students/') }}">
+                    Estudiantes
+                </a>
+
+                <a class="navbar-brand" href="{{ url('becas/') }}">
+                    Becas
+                </a>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>

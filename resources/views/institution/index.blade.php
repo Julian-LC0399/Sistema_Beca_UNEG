@@ -29,16 +29,16 @@
                         </div>
                     @endif
 
-                    <div class="card-body bg-white">
+                    <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>No</th>
-                                        
-									<th >Name</th>
-									<th >Phone</th>
-									<th >Email</th>
+                                        <th>ID</th>
+
+									<th >Nombre</th>
+									<th >Teléfono</th>
+									<th >Correo</th>
 
                                         <th></th>
                                     </tr>
@@ -47,7 +47,7 @@
                                     @foreach ($institutions as $institution)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
+
 										<td >{{ $institution->Name }}</td>
 										<td >{{ $institution->Phone }}</td>
 										<td >{{ $institution->Email }}</td>
