@@ -20,10 +20,10 @@ Route::get('/user', function (Request $request) {
 
 Rest::resource('institutions', InstitutionsController::class);
 Rest::resource('students', StudentsController::class);
-Rest::resource('stu_careers', Stu_careersController::class);
+Rest::resource('stu-careers', Stu_careersController::class);
 Rest::resource('careers', CareersController::class);
 Rest::resource('becas', BecasController::class);
 Rest::resource('campuses', CampusesController::class);
-Rest::resource('stu_becas', Stu_becasController::class);
-Rest::resource('stu_campuses', Stu_campusesController::class);
-Rest::resource('caree_campuses', Caree_campusesController::class);
+Rest::resource('stu-becas', Stu_becasController::class);
+Rest::resource('stu-campuses', Stu_campusesController::class);
+Rest::resource('caree-campuses', Caree_campusesController::class);
