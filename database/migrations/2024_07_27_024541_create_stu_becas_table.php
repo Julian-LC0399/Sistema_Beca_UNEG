@@ -13,8 +13,12 @@ return new class extends Migration
     {
         Schema::create('stu_becas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('Student_id')->nullable()->constrained('students')->cascadeOnDelete()->nullOnDelete();
-            $table->foreignId('Beca_id')->nullable()->constrained('becas')->cascadeOnDelete()->nullOnDelete();
+            $table->unsignedBigInteger('Student_id');
+            $table->unsignedBigInteger('Beca_id');
+
+            $table->foreignId('Student_id')->references('id')->on('students')->onDelete("cascade");
+            $table->foreignId('Beca_id')->references('id')->on('becas')->onDelete("cascade");
+
             $table->timestamps();
         });
     }
