@@ -46,7 +46,7 @@
                     Becas
                 </a>
 
-                <a class="navbar-brand" href="{{ url('/stu_becas') }}">
+                <a class="navbar-brand" href="{{ url('/stu-becas') }}">
                     Estudiantes con beca
                 </a>
 
