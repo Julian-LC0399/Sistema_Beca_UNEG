@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ $campus->name ?? __('Show') . " " . __('Campus') }}
+    {{ $campus->name ?? __('Show') . " " . __('Sede') }}
 @endsection
 
 @section('content')
@@ -11,7 +11,7 @@
                 <div class="card">
                     <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
                         <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} Campus</span>
+                            <span class="card-title">{{ __('Show') }} Sede</span>
                         </div>
                         <div class="float-right">
                             <a class="btn btn-primary btn-sm" href="{{ route('campuses.index') }}"> {{ __('Back') }}</a>

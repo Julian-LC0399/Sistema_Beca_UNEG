@@ -11,7 +11,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">{{ __('Create') }} Registrar sede</span>
+                        <span class="card-title">{{ __('Registro') }} de sede</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('campuses.store') }}"  role="form" enctype="multipart/form-data">

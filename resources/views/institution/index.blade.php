@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Institutions
+    Instituciones
 @endsection
 
 @section('content')
@@ -18,7 +18,7 @@
 
                              <div class="float-right">
                                 <a href="{{ route('institutions.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('Crear registro') }}
                                 </a>
                               </div>
                         </div>
