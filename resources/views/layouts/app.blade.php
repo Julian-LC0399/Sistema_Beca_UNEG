@@ -47,7 +47,7 @@
                 </a>
 
                 <a class="navbar-brand" href="{{ url('/stu_becas') }}">
-                    Estudiantes con becas
+                    Estudiantes con beca
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
