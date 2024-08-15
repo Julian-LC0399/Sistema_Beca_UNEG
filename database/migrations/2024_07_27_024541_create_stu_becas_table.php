@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('stu_becas', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('Student_id');
-            $table->unsignedBigInteger('Beca_id');
+            $table->bigInteger('Student_id')->unsigned();
+            $table->bigInteger('Beca_id')->unsigned();
+
 
             $table->foreignId('Student_id')->references('id')->on('students')->onDelete("cascade");
             $table->foreignId('Beca_id')->references('id')->on('becas')->onDelete("cascade");
