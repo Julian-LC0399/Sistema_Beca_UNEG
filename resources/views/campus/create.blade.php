@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ __('Create') }} Campus
+    {{ __('Create') }} Registrar sede
 @endsection
 
 @section('content')
@@ -11,9 +11,9 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">{{ __('Create') }} Campus</span>
+                        <span class="card-title">{{ __('Create') }} Registrar sede</span>
                     </div>
-                    <div class="card-body bg-white">
+                    <div class="card-body">
                         <form method="POST" action="{{ route('campuses.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
