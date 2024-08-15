@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Instituciones
+    Careers
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Instituciones') }}
+                                {{ __('Carreras') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('institutions.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('careers.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Crear registro') }}
                                 </a>
                               </div>
@@ -36,26 +36,24 @@
                                     <tr>
                                         <th>ID</th>
 
+									<th >Institución</th>
 									<th >Nombre</th>
-									<th >Teléfono</th>
-									<th >Correo</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($institutions as $institution)
+                                    @foreach ($careers as $career)
                                         <tr>
                                             <td>{{ ++$i }}</td>
 
-										<td >{{ $institution->Name }}</td>
-										<td >{{ $institution->Phone }}</td>
-										<td >{{ $institution->Email }}</td>
+										<td >{{ $career->institution->Name }}</td>
+										<td >{{ $career->Name }}</td>
 
                                             <td>
-                                                <form action="{{ route('institutions.destroy', $institution->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('institutions.show', $institution->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Ver') }}</a>
-                                                    <a class="btn btn-sm btn-info" href="{{ route('institutions.edit', $institution->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
+                                                <form action="{{ route('careers.destroy', $career->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('careers.show', $career->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Ver') }}</a>
+                                                    <a class="btn btn-sm btn-info" href="{{ route('careers.edit', $career->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('¿Está seguro de borrar él registro?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i> {{ __('Borrar') }}</button>
@@ -68,7 +66,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $institutions->withQueryString()->links() !!}
+                {!! $careers->withQueryString()->links() !!}
             </div>
         </div>
     </div>

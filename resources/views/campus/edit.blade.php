@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ __('Update') }} Institución
+    {{ __('Update') }} Actualizar sede
 @endsection
 
 @section('content')
@@ -11,14 +11,14 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">{{ __('Actualizar') }} registro de institucioón</span>
+                        <span class="card-title">{{ __('Actualizar') }} regidtro de sede</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('institutions.update', $institution->id) }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('campuses.update', $campus->id) }}"  role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}
                             @csrf
 
-                            @include('institution.form')
+                            @include('campus.form')
 
                         </form>
                     </div>

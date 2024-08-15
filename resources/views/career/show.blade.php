@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ $institution->name ?? __('Show') . " " . __('Institution') }}
+    {{ $career->name ?? __('Show') . " " . __('Career') }}
 @endsection
 
 @section('content')
@@ -11,26 +11,22 @@
                 <div class="card">
                     <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
                         <div class="float-left">
-                            <span class="card-title">{{ __('Vista de datos') }} de la institución</span>
+                            <span class="card-title">{{ __('Vista de datos') }} de la carrera</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary btn-sm" href="{{ route('institutions.index') }}"> {{ __('Volver') }}</a>
+                            <a class="btn btn-primary btn-sm" href="{{ route('careers.index') }}"> {{ __('Volver') }}</a>
                         </div>
                     </div>
 
                     <div class="card-body">
 
                                 <div class="form-group mb-2 mb20">
+                                    <strong>Institución:</strong>
+                                    {{ $career->institution->Name }}
+                                </div>
+                                <div class="form-group mb-2 mb20">
                                     <strong>Nombre:</strong>
-                                    {{ $institution->Name }}
-                                </div>
-                                <div class="form-group mb-2 mb20">
-                                    <strong>Teléfono:</strong>
-                                    {{ $institution->Phone }}
-                                </div>
-                                <div class="form-group mb-2 mb20">
-                                    <strong>Correo:</strong>
-                                    {{ $institution->Email }}
+                                    {{ $career->Name }}
                                 </div>
 
                     </div>

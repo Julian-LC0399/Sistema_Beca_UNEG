@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Instituciones
+    Students
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Instituciones') }}
+                                {{ __('Estudiantes') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('institutions.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('students.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Crear registro') }}
                                 </a>
                               </div>
@@ -36,26 +36,34 @@
                                     <tr>
                                         <th>ID</th>
 
-									<th >Nombre</th>
+									<th >Primer nombre</th>
+									<th >Apellido</th>
+									<th >Cédula</th>
 									<th >Teléfono</th>
+									<th >Teléfono de habitación</th>
 									<th >Correo</th>
+									<th >Semestre</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($institutions as $institution)
+                                    @foreach ($students as $student)
                                         <tr>
                                             <td>{{ ++$i }}</td>
 
-										<td >{{ $institution->Name }}</td>
-										<td >{{ $institution->Phone }}</td>
-										<td >{{ $institution->Email }}</td>
+										<td >{{ $student->First_name }}</td>
+										<td >{{ $student->Suname }}</td>
+										<td >{{ $student->Identification_card }}</td>
+										<td >{{ $student->Phone }}</td>
+										<td >{{ $student->Room_telephone }}</td>
+										<td >{{ $student->Email }}</td>
+										<td >{{ $student->Semeter }}</td>
 
                                             <td>
-                                                <form action="{{ route('institutions.destroy', $institution->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('institutions.show', $institution->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Ver') }}</a>
-                                                    <a class="btn btn-sm btn-info" href="{{ route('institutions.edit', $institution->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
+                                                <form action="{{ route('students.destroy', $student->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('students.show', $student->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Ver') }}</a>
+                                                    <a class="btn btn-sm btn-info" href="{{ route('students.edit', $student->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('¿Está seguro de borrar él registro?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i> {{ __('Borrar') }}</button>
@@ -68,7 +76,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $institutions->withQueryString()->links() !!}
+                {!! $students->withQueryString()->links() !!}
             </div>
         </div>
     </div>
