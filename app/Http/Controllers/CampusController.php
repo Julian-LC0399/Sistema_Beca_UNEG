@@ -40,7 +40,7 @@ class CampusController extends Controller
         Campus::create($request->validated());
 
         return Redirect::route('campuses.index')
-            ->with('success', 'Campus created successfully.');
+            ->with('listo', 'Sede registrada correctamente.');
     }
 
     /**
@@ -71,7 +71,7 @@ class CampusController extends Controller
         $campus->update($request->validated());
 
         return Redirect::route('campuses.index')
-            ->with('success', 'Campus updated successfully');
+            ->with('Listo', 'Registro de sede actualizado correctamente.');
     }
 
     public function destroy($id): RedirectResponse
@@ -79,6 +79,6 @@ class CampusController extends Controller
         Campus::find($id)->delete();
 
         return Redirect::route('campuses.index')
-            ->with('success', 'Campus deleted successfully');
+            ->with('Listo', 'Registro de sede borrado correctamente.');
     }
 }
