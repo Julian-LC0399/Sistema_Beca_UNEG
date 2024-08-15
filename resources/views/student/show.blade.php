@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ $student->name ?? __('Show') . " " . __('Student') }}
+    {{ $student->name ?? __('vista') . " " . __('Estudiante') }}
 @endsection
 
 @section('content')
@@ -18,7 +18,7 @@
                         </div>
                     </div>
 
-                    <div class="card-body bg-white">
+                    <div class="card-body">
 
                                 <div class="form-group mb-2 mb20">
                                     <strong>Primer nombre:</strong>

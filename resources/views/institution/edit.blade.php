@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ __('Update') }} Institution
+    {{ __('Update') }} Institución
 @endsection
 
 @section('content')

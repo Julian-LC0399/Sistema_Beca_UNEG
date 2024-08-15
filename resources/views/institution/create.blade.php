@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ __('Create') }} Institution
+    {{ __('Create') }} Institución
 @endsection
 
 @section('content')
