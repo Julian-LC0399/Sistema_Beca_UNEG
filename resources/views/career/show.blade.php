@@ -11,21 +11,21 @@
                 <div class="card">
                     <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
                         <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} Career</span>
+                            <span class="card-title">{{ __('Show') }} Carrera</span>
                         </div>
                         <div class="float-right">
                             <a class="btn btn-primary btn-sm" href="{{ route('careers.index') }}"> {{ __('Back') }}</a>
                         </div>
                     </div>
 
-                    <div class="card-body bg-white">
-                        
+                    <div class="card-body">
+
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Institution Id:</strong>
-                                    {{ $career->Institution_id }}
+                                    <strong>Institución:</strong>
+                                    {{ $career->institution->Name }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Name:</strong>
+                                    <strong>Nombre:</strong>
                                     {{ $career->Name }}
                                 </div>
 
