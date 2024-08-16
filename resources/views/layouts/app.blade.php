@@ -30,16 +30,20 @@
                     Instituciones
                 </a>
 
-                <a class="navbar-brand" href="{{ url('/campuses') }}">
-                    Sedes
-                </a>
-
                 <a class="navbar-brand" href="{{ url('/careers') }}">
                     Carreras
                 </a>
 
+                <a class="navbar-brand" href="{{ url('/campuses') }}">
+                    Sedes
+                </a>
+
+                <a class="navbar-brand" href="{{ url('/caree-campuses') }}">
+                    Carreras y su sede
+                </a>
+
                 <a class="navbar-brand" href="{{ url('/students') }}">
-                    Estudiante
+                    Estudiantes
                 </a>
 
                 <a class="navbar-brand" href="{{ url('/becas') }}">

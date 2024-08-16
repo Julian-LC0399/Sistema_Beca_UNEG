@@ -22,3 +22,4 @@ Route::resource('students', StudentController::class);
 Route::resource('campuses', CampusController::class);
 Route::resource('careers', CareerController::class);
 Route::resource('stu-becas', StuBecaController::class);
+Route::resource('caree-campuses', CareerController::class);
