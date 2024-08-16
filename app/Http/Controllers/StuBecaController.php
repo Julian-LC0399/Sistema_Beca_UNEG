@@ -40,7 +40,7 @@ class StuBecaController extends Controller
         StuBeca::create($request->validated());
 
         return Redirect::route('stu-becas.index')
-            ->with('success', 'StuBeca created successfully.');
+            ->with('success', 'Registro creado correctamente.');
     }
 
     /**
@@ -71,7 +71,7 @@ class StuBecaController extends Controller
         $stuBeca->update($request->validated());
 
         return Redirect::route('stu-becas.index')
-            ->with('success', 'StuBeca updated successfully');
+            ->with('success', 'Registro actualizado correctamente.');
     }
 
     public function destroy($id): RedirectResponse
@@ -79,6 +79,6 @@ class StuBecaController extends Controller
         StuBeca::find($id)->delete();
 
         return Redirect::route('stu-becas.index')
-            ->with('success', 'StuBeca deleted successfully');
+            ->with('success', 'Registro borrado correctamente.');
     }
 }
