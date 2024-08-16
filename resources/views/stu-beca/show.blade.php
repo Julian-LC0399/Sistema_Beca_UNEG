@@ -11,7 +11,7 @@
                 <div class="card">
                     <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
                         <div class="float-left">
-                            <span class="card-title">{{ __('Vista de datos') }} estudiante con becas</span>
+                            <span class="card-title">{{ __('Vista de datos') }} estudiante con beca</span>
                         </div>
                         <div class="float-right">
                             <a class="btn btn-primary btn-sm" href="{{ route('stu-becas.index') }}"> {{ __('Back') }}</a>
