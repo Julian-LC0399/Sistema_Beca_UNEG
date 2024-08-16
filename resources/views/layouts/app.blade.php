@@ -24,7 +24,6 @@
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/home') }}">
                     {{ config('app.name', 'Sistema de becas uneg') }}
-                    inicio
                 </a>
 
                 <a class="navbar-brand" href="{{ url('/institutions') }}">
