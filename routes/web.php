@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BecaController;
 use App\Http\Controllers\CampusController;
+use App\Http\Controllers\CareeCampusController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\InstitutionController;
 use App\Http\Controllers\StuBecaController;
@@ -22,4 +23,4 @@ Route::resource('students', StudentController::class);
 Route::resource('campuses', CampusController::class);
 Route::resource('careers', CareerController::class);
 Route::resource('stu-becas', StuBecaController::class);
-Route::resource('caree-campuses', CareerController::class);
+Route::resource('caree-campuses', CareeCampusController::class);
