@@ -34,7 +34,7 @@
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>Id</th>
+                                        <th>ID</th>
 
 									<th >Cédula del estudiante</th>
 									<th >Beca</th>
