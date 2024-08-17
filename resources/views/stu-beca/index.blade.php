@@ -36,7 +36,7 @@
                                     <tr>
                                         <th>Id</th>
 
-									<th >Estudiante</th>
+									<th >Cédula del estudiante</th>
 									<th >Beca</th>
 
                                         <th></th>
@@ -47,7 +47,7 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
 
-										<td >{{ $stuBeca->student->First_name }}</td>
+										<td >{{ $stuBeca->student->Identification_card }}</td>
 										<td >{{ $stuBeca->beca->Type }}</td>
 
                                             <td>

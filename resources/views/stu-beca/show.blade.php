@@ -21,8 +21,8 @@
                     <div class="card-body">
 
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Estudiante:</strong>
-                                    {{ $stuBeca->student->First_name }}
+                                    <strong>Cédula del estudiante:</strong>
+                                    {{ $stuBeca->student->Identification_card }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
                                     <strong>Beca:</strong>
