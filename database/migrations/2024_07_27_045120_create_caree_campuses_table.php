@@ -13,8 +13,12 @@ return new class extends Migration
     {
         Schema::create('caree_campuses', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('Career_id')->constrained();
-            $table->foreignId('Campus_id')->constrained();
+            $table->bigInteger('Career_id')->unsigned();
+            $table->bigInteger('Campus_id')->unsigned();
+
+            $table->foreign('Career_id')->references('id')->on('careers')->onDelete("cascade");
+            $table->foreign('Campus_id')->references('id')->on('campuses')->onDelete("cascade");
+
             $table->timestamps();
         });
     }

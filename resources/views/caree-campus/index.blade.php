@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Sedes
+    Caree Campuses
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Sedes') }}
+                                {{ __('Carreras y sede') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('campuses.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('caree-campuses.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Crear registro') }}
                                 </a>
                               </div>
@@ -36,26 +36,24 @@
                                     <tr>
                                         <th>ID</th>
 
-									<th >Institución</th>
-									<th >Nombre</th>
-									<th >Dirección</th>
+									<th >Carrera</th>
+									<th >Sede</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($campuses as $campus)
+                                    @foreach ($careeCampuses as $careeCampus)
                                         <tr>
                                             <td>{{ ++$i }}</td>
 
-										<td >{{ $campus->institution->Name }}</td>
-										<td >{{ $campus->Name }}</td>
-										<td >{{ $campus->Address }}</td>
+										<td >{{ $careeCampus->career->Name }}</td>
+										<td >{{ $careeCampus->campus->Name }}</td>
 
                                             <td>
-                                                <form action="{{ route('campuses.destroy', $campus->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('campuses.show', $campus->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Ver') }}</a>
-                                                    <a class="btn btn-sm btn-info" href="{{ route('campuses.edit', $campus->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
+                                                <form action="{{ route('caree-campuses.destroy', $careeCampus->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('caree-campuses.show', $careeCampus->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Ver') }}</a>
+                                                    <a class="btn btn-sm btn-info" href="{{ route('caree-campuses.edit', $careeCampus->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('¿Está seguro de borrar él registro?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i> {{ __('Borrar') }}</button>
@@ -68,7 +66,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $campuses->withQueryString()->links() !!}
+                {!! $careeCampuses->withQueryString()->links() !!}
             </div>
         </div>
     </div>

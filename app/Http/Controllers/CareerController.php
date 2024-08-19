@@ -40,7 +40,7 @@ class CareerController extends Controller
         Career::create($request->validated());
 
         return Redirect::route('careers.index')
-            ->with('Listo', 'Carrera registrada correctamente.');
+            ->with('success', 'Carrera registrada correctamente.');
     }
 
     /**
@@ -71,7 +71,7 @@ class CareerController extends Controller
         $career->update($request->validated());
 
         return Redirect::route('careers.index')
-            ->with('Listo', 'Registro de carrera actualizado correctamente.');
+            ->with('success', 'Registro de carrera actualizado correctamente.');
     }
 
     public function destroy($id): RedirectResponse
@@ -79,6 +79,6 @@ class CareerController extends Controller
         Career::find($id)->delete();
 
         return Redirect::route('careers.index')
-            ->with('Listo', 'Registro de carrera borrado correctamente.');
+            ->with('success', 'Registro de carrera borrado correctamente.');
     }
 }

@@ -40,7 +40,7 @@ class InstitutionController extends Controller
         Institution::create($request->validated());
 
         return Redirect::route('institutions.index')
-            ->with('Listo', 'Institución registrada correctamente.');
+            ->with('success', 'Institución registrada correctamente.');
     }
 
     /**
@@ -71,7 +71,7 @@ class InstitutionController extends Controller
         $institution->update($request->validated());
 
         return Redirect::route('institutions.index')
-            ->with('Listo', 'Registro de institución actualizado correctamente.');
+            ->with('success', 'Registro de institución actualizado correctamente.');
     }
 
     public function destroy($id): RedirectResponse
@@ -79,6 +79,6 @@ class InstitutionController extends Controller
         Institution::find($id)->delete();
 
         return Redirect::route('institutions.index')
-            ->with('Listo', 'Registro de institución borrado correctamente.');
+            ->with('success', 'Registro de institución borrado correctamente.');
     }
 }

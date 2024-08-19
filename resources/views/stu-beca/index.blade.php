@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Sedes
+    Stu Becas
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Sedes') }}
+                                {{ __('Estudiantes con beca') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('campuses.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('stu-becas.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Crear registro') }}
                                 </a>
                               </div>
@@ -36,26 +36,24 @@
                                     <tr>
                                         <th>ID</th>
 
-									<th >Institución</th>
-									<th >Nombre</th>
-									<th >Dirección</th>
+									<th >Cédula del estudiante</th>
+									<th >Beca</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($campuses as $campus)
+                                    @foreach ($stuBecas as $stuBeca)
                                         <tr>
                                             <td>{{ ++$i }}</td>
 
-										<td >{{ $campus->institution->Name }}</td>
-										<td >{{ $campus->Name }}</td>
-										<td >{{ $campus->Address }}</td>
+										<td >{{ $stuBeca->student->Identification_card }}</td>
+										<td >{{ $stuBeca->beca->Type }}</td>
 
                                             <td>
-                                                <form action="{{ route('campuses.destroy', $campus->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('campuses.show', $campus->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Ver') }}</a>
-                                                    <a class="btn btn-sm btn-info" href="{{ route('campuses.edit', $campus->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
+                                                <form action="{{ route('stu-becas.destroy', $stuBeca->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('stu-becas.show', $stuBeca->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Ver') }}</a>
+                                                    <a class="btn btn-sm btn-info" href="{{ route('stu-becas.edit', $stuBeca->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('¿Está seguro de borrar él registro?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i> {{ __('Borrar') }}</button>
@@ -68,7 +66,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $campuses->withQueryString()->links() !!}
+                {!! $stuBecas->withQueryString()->links() !!}
             </div>
         </div>
     </div>

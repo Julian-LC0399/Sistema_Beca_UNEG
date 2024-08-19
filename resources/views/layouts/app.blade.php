@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Sistema de becas uneg') }}</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -23,27 +23,43 @@
         <nav class="navbar navbar-expand-md navbar-dark bg-primary shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/home') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ config('app.name', 'Sistema de becas uneg') }}
                 </a>
 
                 <a class="navbar-brand" href="{{ url('/institutions') }}">
                     Instituciones
                 </a>
 
-                <a class="navbar-brand" href="{{ url('/campuses') }}">
-                    Sedes
-                </a>
-
                 <a class="navbar-brand" href="{{ url('/careers') }}">
                     Carreras
                 </a>
 
+                <a class="navbar-brand" href="{{ url('/campuses') }}">
+                    Sedes
+                </a>
+
+                <a class="navbar-brand" href="{{ url('/caree-campuses') }}">
+                    Carreras y sedes
+                </a>
+
                 <a class="navbar-brand" href="{{ url('/students') }}">
-                    Estudiante
+                    Estudiantes
+                </a>
+
+                <a class="navbar-brand" href="{{ url('/stu-careers') }}">
+                    Estudiantes por carrera
+                </a>
+
+                <a class="navbar-brand" href="{{ url('/stu-campuses') }}">
+                    Estudiantes y sede
                 </a>
 
                 <a class="navbar-brand" href="{{ url('/becas') }}">
                     Becas
+                </a>
+
+                <a class="navbar-brand" href="{{ url('/stu-becas') }}">
+                    Estudiantes con beca
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

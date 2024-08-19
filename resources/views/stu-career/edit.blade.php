@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ __('Update') }} Actulizar estudiante
+    {{ __('Update') }} Stu Career
 @endsection
 
 @section('content')
@@ -11,14 +11,14 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">{{ __(' Actualizar') }} registro del estudiante</span>
+                        <span class="card-title">{{ __('Actualizar') }} registro de estudiante y su carrera</span>
                     </div>
-                    <div class="card-body">
-                        <form method="POST" action="{{ route('students.update', $student->id) }}"  role="form" enctype="multipart/form-data">
+                    <div class="card-body bg-white">
+                        <form method="POST" action="{{ route('stu-careers.update', $stuCareer->id) }}"  role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}
                             @csrf
 
-                            @include('student.form')
+                            @include('stu-career.form')
 
                         </form>
                     </div>
