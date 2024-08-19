@@ -39,7 +39,7 @@
                 </a>
 
                 <a class="navbar-brand" href="{{ url('/caree-campuses') }}">
-                    Carreras y sede
+                    Carreras y sedes
                 </a>
 
                 <a class="navbar-brand" href="{{ url('/students') }}">
@@ -47,7 +47,7 @@
                 </a>
 
                 <a class="navbar-brand" href="{{ url('/stu-careers') }}">
-                    Estudiantes y carrera
+                    Estudiantes por carrera
                 </a>
 
                 <a class="navbar-brand" href="{{ url('/stu-campuses') }}">
