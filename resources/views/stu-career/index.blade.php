@@ -36,7 +36,7 @@
                                     <tr>
                                         <th>ID</th>
 
-									<th >Estudiante</th>
+									<th >Cédula del estudiante</th>
 									<th >Carrera</th>
 
                                         <th></th>
