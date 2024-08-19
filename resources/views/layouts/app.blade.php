@@ -51,7 +51,7 @@
                 </a>
 
                 <a class="navbar-brand" href="{{ url('/stu-campuses') }}">
-                    Estudiantes y sede
+                    Estudiantes y sedes
                 </a>
 
                 <a class="navbar-brand" href="{{ url('/becas') }}">
