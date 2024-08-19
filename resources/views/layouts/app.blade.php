@@ -46,6 +46,10 @@
                     Estudiantes
                 </a>
 
+                <a class="navbar-brand" href="{{ url('/stu-careers') }}">
+                    Estudiantes por carrera
+                </a>
+
                 <a class="navbar-brand" href="{{ url('/becas') }}">
                     Becas
                 </a>
