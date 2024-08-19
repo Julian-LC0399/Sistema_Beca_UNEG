@@ -40,7 +40,7 @@ class StuCareerController extends Controller
         StuCareer::create($request->validated());
 
         return Redirect::route('stu-careers.index')
-            ->with('success', 'StuCareer created successfully.');
+            ->with('success', 'Registro creado correctamente.');
     }
 
     /**
@@ -71,7 +71,7 @@ class StuCareerController extends Controller
         $stuCareer->update($request->validated());
 
         return Redirect::route('stu-careers.index')
-            ->with('success', 'StuCareer updated successfully');
+            ->with('success', 'Registro actualizado correctamente.');
     }
 
     public function destroy($id): RedirectResponse
@@ -79,6 +79,6 @@ class StuCareerController extends Controller
         StuCareer::find($id)->delete();
 
         return Redirect::route('stu-careers.index')
-            ->with('success', 'StuCareer deleted successfully');
+            ->with('success', 'Registro borrado correctamente.');
     }
 }

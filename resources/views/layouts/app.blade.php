@@ -50,6 +50,10 @@
                     Estudiantes por carrera
                 </a>
 
+                <a class="navbar-brand" href="{{ url('/stu-campuses') }}">
+                    Estudiantes por sede
+                </a>
+
                 <a class="navbar-brand" href="{{ url('/becas') }}">
                     Becas
                 </a>
