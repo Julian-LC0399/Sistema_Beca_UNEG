@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ __('Create') }} Registar carrera
+    {{ __('Create') }} Registrar carrera
 @endsection
 
 @section('content')

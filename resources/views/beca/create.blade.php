@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ __('Create') }} Beca
+    {{ __('Create') }} Registrar beca
 @endsection
 
 @section('content')
