@@ -23,7 +23,6 @@ class CampusResource extends RestResource
     {
         return [
             'id',
-            'Institution_id',
             'Name',
             'Address'
         ];

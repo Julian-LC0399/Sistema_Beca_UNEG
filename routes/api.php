@@ -18,7 +18,6 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Rest::resource('institutions', InstitutionsController::class);
 Rest::resource('students', StudentsController::class);
 Rest::resource('stu-careers', Stu_careersController::class);
 Rest::resource('careers', CareersController::class);

@@ -13,8 +13,6 @@ return new class extends Migration
     {
         Schema::create('becas', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('Institution_id')->unsigned();
-            $table->foreign('Institution_id')->references('id')->on('institutions')->onDelete("cascade");
             $table->string('Type');
             $table->timestamps();
         });
