@@ -29,14 +29,14 @@
                         </div>
                     @endif
 
-                    <div class="card-body bg-white">
+                    <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>No</th>
+                                        <th>ID</th>
 
-									<th >Name</th>
+									<th >Nombre</th>
 
                                         <th></th>
                                     </tr>
