@@ -22,7 +22,6 @@ class CampusRequest extends FormRequest
     public function rules(): array
     {
         return [
-			'Institution_id' => 'required',
 			'Name' => 'required|string',
 			'Address' => 'required|string',
         ];
