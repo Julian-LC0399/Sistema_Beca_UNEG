@@ -18,7 +18,7 @@
 
                              <div class="float-right">
                                 <a href="{{ route('becas.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('Crear registro') }}
                                 </a>
                               </div>
                         </div>
