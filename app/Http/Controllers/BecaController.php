@@ -40,7 +40,7 @@ class BecaController extends Controller
         Beca::create($request->validated());
 
         return Redirect::route('becas.index')
-            ->with('success', 'Beca created successfully.');
+            ->with('success', 'Beca registrada correctamente.');
     }
 
     /**
@@ -71,7 +71,7 @@ class BecaController extends Controller
         $beca->update($request->validated());
 
         return Redirect::route('becas.index')
-            ->with('success', 'Beca updated successfully');
+            ->with('success', 'Registro de beca actualizado correctamente.');
     }
 
     public function destroy($id): RedirectResponse
@@ -79,6 +79,6 @@ class BecaController extends Controller
         Beca::find($id)->delete();
 
         return Redirect::route('becas.index')
-            ->with('success', 'Beca deleted successfully');
+            ->with('success', 'Registro de beca borrado correctamente.');
     }
 }

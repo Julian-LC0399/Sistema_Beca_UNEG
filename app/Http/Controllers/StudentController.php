@@ -71,7 +71,7 @@ class StudentController extends Controller
         $student->update($request->validated());
 
         return Redirect::route('students.index')
-            ->with('success', 'Registro de estudiante actualizado correctamente');
+            ->with('success', 'Registro de estudiante actualizado correctamente.');
     }
 
     public function destroy($id): RedirectResponse
@@ -79,6 +79,6 @@ class StudentController extends Controller
         Student::find($id)->delete();
 
         return Redirect::route('students.index')
-            ->with('success', 'Registro de estudiante borrado correctamente');
+            ->with('success', 'Registro de estudiante borrado correctamente.');
     }
 }

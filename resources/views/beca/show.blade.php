@@ -11,17 +11,17 @@
                 <div class="card">
                     <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
                         <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} Beca</span>
+                            <span class="card-title">{{ __('Vista de datos') }} de la beca</span>
                         </div>
                         <div class="float-right">
                             <a class="btn btn-primary btn-sm" href="{{ route('becas.index') }}"> {{ __('Back') }}</a>
                         </div>
                     </div>
 
-                    <div class="card-body bg-white">
-                        
+                    <div class="card-body">
+
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Type:</strong>
+                                    <strong>Tipo:</strong>
                                     {{ $beca->Type }}
                                 </div>
 
