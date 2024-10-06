@@ -8,12 +8,10 @@ use Illuminate\Database\Eloquent\Model;
  * Class Beca
  *
  * @property $id
- * @property $Institution_id
  * @property $Type
  * @property $created_at
  * @property $updated_at
  *
- * @property Institution $institution
  * @property StuBeca[] $stuBecas
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
@@ -28,17 +26,9 @@ class Beca extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['Institution_id', 'Type'];
+    protected $fillable = ['Type'];
 
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function institution()
-    {
-        return $this->belongsTo(\App\Models\Institution::class, 'Institution_id', 'id');
-    }
-    
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */

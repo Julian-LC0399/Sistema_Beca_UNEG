@@ -36,7 +36,6 @@
                                     <tr>
                                         <th>ID</th>
 
-									<th >Institución</th>
 									<th >Tipo</th>
 
                                         <th></th>
@@ -47,7 +46,6 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
 
-										<td >{{ $beca->institution->Name}}</td>
 										<td >{{ $beca->Type }}</td>
 
                                             <td>

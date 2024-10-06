@@ -8,13 +8,11 @@ use Illuminate\Database\Eloquent\Model;
  * Class Campus
  *
  * @property $id
- * @property $Institution_id
  * @property $Name
  * @property $Address
  * @property $created_at
  * @property $updated_at
  *
- * @property Institution $institution
  * @property CareeCampus[] $careeCampuses
  * @property StuCampus[] $stuCampuses
  * @package App
@@ -30,17 +28,9 @@ class Campus extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['Institution_id', 'Name', 'Address'];
+    protected $fillable = ['Name', 'Address'];
 
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function institution()
-    {
-        return $this->belongsTo(\App\Models\Institution::class, 'Institution_id', 'id');
-    }
-    
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */

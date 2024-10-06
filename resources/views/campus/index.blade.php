@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Sedes
+    Campuses
 @endsection
 
 @section('content')
@@ -13,7 +13,7 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Sedes') }}
+                                {{ __('Campuses') }}
                             </span>
 
                              <div class="float-right">
@@ -36,7 +36,6 @@
                                     <tr>
                                         <th>ID</th>
 
-									<th >Institución</th>
 									<th >Nombre</th>
 									<th >Dirección</th>
 
@@ -48,7 +47,6 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
 
-										<td >{{ $campus->institution->Name }}</td>
 										<td >{{ $campus->Name }}</td>
 										<td >{{ $campus->Address }}</td>
 

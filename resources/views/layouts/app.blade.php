@@ -26,10 +26,6 @@
                     {{ config('app.name', 'Sistema de becas uneg') }}
                 </a>
 
-                <a class="navbar-brand" href="{{ url('/institutions') }}">
-                    Instituciones
-                </a>
-
                 <a class="navbar-brand" href="{{ url('/careers') }}">
                     Carreras
                 </a>

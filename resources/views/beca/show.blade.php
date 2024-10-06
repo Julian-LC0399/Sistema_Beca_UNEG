@@ -11,19 +11,15 @@
                 <div class="card">
                     <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
                         <div class="float-left">
-                            <span class="card-title">{{ __('Vista de datos') }}  de la beca</span>
+                            <span class="card-title">{{ __('Vista de datos') }} de la beca</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary btn-sm" href="{{ route('becas.index') }}"> {{ __('Vorlver') }}</a>
+                            <a class="btn btn-primary btn-sm" href="{{ route('becas.index') }}"> {{ __('Volver') }}</a>
                         </div>
                     </div>
 
                     <div class="card-body">
 
-                                <div class="form-group mb-2 mb20">
-                                    <strong>Institución:</strong>
-                                    {{ $beca->institution->Name }}
-                                </div>
                                 <div class="form-group mb-2 mb20">
                                     <strong>Tipo:</strong>
                                     {{ $beca->Type }}

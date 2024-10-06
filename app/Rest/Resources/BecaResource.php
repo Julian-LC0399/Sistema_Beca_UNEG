@@ -23,7 +23,6 @@ class BecaResource extends RestResource
     {
         return [
             'id',
-            'Institution_id',
             'Type'
         ];
     }

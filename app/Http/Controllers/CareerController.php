@@ -40,7 +40,7 @@ class CareerController extends Controller
         Career::create($request->validated());
 
         return Redirect::route('careers.index')
-            ->with('success', 'Carrera registrada correctamente.');
+            ->with('success', 'Carrera creada correctamente.');
     }
 
     /**

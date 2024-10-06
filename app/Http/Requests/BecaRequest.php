@@ -22,7 +22,6 @@ class BecaRequest extends FormRequest
     public function rules(): array
     {
         return [
-			'Institution_id' => 'required',
 			'Type' => 'required|string',
         ];
     }

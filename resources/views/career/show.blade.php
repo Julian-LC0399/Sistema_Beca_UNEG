@@ -21,10 +21,6 @@
                     <div class="card-body">
 
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Institución:</strong>
-                                    {{ $career->institution->Name }}
-                                </div>
-                                <div class="form-group mb-2 mb20">
                                     <strong>Nombre:</strong>
                                     {{ $career->Name }}
                                 </div>

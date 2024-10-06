@@ -36,7 +36,6 @@
                                     <tr>
                                         <th>ID</th>
 
-									<th >Institución</th>
 									<th >Nombre</th>
 
                                         <th></th>
@@ -47,7 +46,6 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
 
-										<td >{{ $career->institution->Name }}</td>
 										<td >{{ $career->Name }}</td>
 
                                             <td>

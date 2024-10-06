@@ -23,7 +23,6 @@ class CareerResource extends RestResource
     {
         return [
             'id',
-            'Institution_id',
             'Name'
         ];
     }

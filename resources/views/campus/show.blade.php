@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ $campus->name ?? __('Show') . " " . __('Sede') }}
+    {{ $campus->name ?? __('Show') . " " . __('Campus') }}
 @endsection
 
 @section('content')
@@ -11,25 +11,21 @@
                 <div class="card">
                     <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
                         <div class="float-left">
-                            <span class="card-title">{{ __('vista de datos') }} de la sede</span>
+                            <span class="card-title">{{ __('Show') }} Campus</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary btn-sm" href="{{ route('campuses.index') }}"> {{ __('Volver') }}</a>
+                            <a class="btn btn-primary btn-sm" href="{{ route('campuses.index') }}"> {{ __('Back') }}</a>
                         </div>
                     </div>
 
                     <div class="card-body">
 
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Institución:</strong>
-                                    {{ $campus->institution->Name }}
-                                </div>
-                                <div class="form-group mb-2 mb20">
                                     <strong>Nombre:</strong>
                                     {{ $campus->Name }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Dirrección:</strong>
+                                    <strong>Dirección:</strong>
                                     {{ $campus->Address }}
                                 </div>
 

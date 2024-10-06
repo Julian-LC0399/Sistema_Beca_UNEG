@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ __('Update') }} Actualizar sede
+    {{ __('Update') }} Campus
 @endsection
 
 @section('content')
@@ -11,7 +11,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">{{ __('Actualizar') }} regidtro de sede</span>
+                        <span class="card-title">{{ __('Actualizar') }} datos de la sede</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('campuses.update', $campus->id) }}"  role="form" enctype="multipart/form-data">

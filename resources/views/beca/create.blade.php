@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ __('Create') }} Registrar beca
+    {{ __('Create') }} Beca
 @endsection
 
 @section('content')
@@ -11,7 +11,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">{{ __('Registro') }} de beca</span>
+                        <span class="card-title">{{ __('Registro') }} de la beca</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('becas.store') }}"  role="form" enctype="multipart/form-data">
