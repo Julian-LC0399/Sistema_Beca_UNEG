@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Sistema de becas uneg') }}</title>
+    <title>Sistema de Becas UNEG</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -18,102 +18,84 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 
-<body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-primary shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/home') }}">
-                    {{ config('app.name', 'Sistema de becas uneg') }}
+<body style="display: grid; grid-template-columns: auto 1fr; height: 100vh">
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: Carreras y sede
+280px; height: 100vh">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        
+            <span class="fs-4">UNEG</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+       
+            <li>
+                <a href="{{ url('/careers') }}" class="nav-link text-white">
+                 Carrera
                 </a>
-
-                <a class="navbar-brand" href="{{ url('/careers') }}">
-                    Carreras
+            </li>
+            <li>
+                <a href="{{ url('/campuses') }}" class="nav-link text-white">
+                 Sedes
                 </a>
-
-                <a class="navbar-brand" href="{{ url('/campuses') }}">
-                    Sedes
-                </a>
-
-                <a class="navbar-brand" href="{{ url('/caree-campuses') }}">
+            </li>
+             <li>
+                <a href="{{ url('/caree-campuses') }}" class="nav-link text-white">
                     Carreras y sedes
                 </a>
-
-                <a class="navbar-brand" href="{{ url('/students') }}">
+            </li>
+            <li>
+                <a href="{{ url('/students') }}" class="nav-link text-white">
                     Estudiantes
                 </a>
-
-                <a class="navbar-brand" href="{{ url('/stu-careers') }}">
+            </li>
+            <li>
+                <a href="{{ url('/stu-careers') }}" class="nav-link text-white">
                     Estudiantes por carrera
                 </a>
-
-                <a class="navbar-brand" href="{{ url('/stu-campuses') }}">
+            </li>
+             <li>
+                <a href="{{ url('/stu-campuses') }}" class="nav-link text-white">
                     Estudiantes y sede
                 </a>
-
-                <a class="navbar-brand" href="{{ url('/becas') }}">
+            </li>            
+            <li>
+                <a href="{{ url('/becas') }}" class="nav-link text-white">
                     Becas
                 </a>
-
-                <a class="navbar-brand" href="{{ url('/stu-becas') }}">
+            </li>
+                <li>
+                <a href="{{ url('/stu-becas') }}" class="nav-link text-white">
                     Estudiantes con beca
                 </a>
+            </li>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Inicio de sesión') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
+        </ul>
+        <hr>
+        <div class="dropdown">
+            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                <strong>{{ Auth::user()->name }}</strong>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();"
+                    >
+                    {{ __('Cerrar Sesión') }}
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+                </li>
+            </ul>
+        </div>
     </div>
+    <main class="py-4">
+        @yield('content')
+    </main>
 </body>
 
 </html>

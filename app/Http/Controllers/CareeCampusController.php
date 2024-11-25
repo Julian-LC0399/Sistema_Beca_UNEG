@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Career;
+use App\Models\Campus;
 use App\Models\CareeCampus;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -17,7 +19,6 @@ class CareeCampusController extends Controller
     public function index(Request $request): View
     {
         $careeCampuses = CareeCampus::paginate();
-
         return view('caree-campus.index', compact('careeCampuses'))
             ->with('i', ($request->input('page', 1) - 1) * $careeCampuses->perPage());
     }
@@ -28,8 +29,11 @@ class CareeCampusController extends Controller
     public function create(): View
     {
         $careeCampus = new CareeCampus();
+        $careers = Career::all();
+        $campuses = Campus::all();
+        $register = true;
 
-        return view('caree-campus.create', compact('careeCampus'));
+        return view('caree-campus.create', compact(['careeCampus','careers','campuses','register']));
     }
 
     /**
@@ -59,8 +63,11 @@ class CareeCampusController extends Controller
     public function edit($id): View
     {
         $careeCampus = CareeCampus::find($id);
+        $careers = Career::all();
+        $campuses = Campus::all();
+        $register = false;
 
-        return view('caree-campus.edit', compact('careeCampus'));
+        return view('caree-campus.edit', compact(['careeCampus','careers','campuses','register']));
     }
 
     /**
