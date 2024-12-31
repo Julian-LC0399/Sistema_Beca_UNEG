@@ -20,6 +20,9 @@
                                 <a href="{{ route('stu-becas.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Crear registro') }}
                                 </a>
+                                <a href="{{ route('stu-becas.export') }}" class="btn btn-success btn-sm float-right mx-2">
+                                 {{ __('Descargar CSV') }}
+                                </a>
                               </div>
                         </div>
                     </div>

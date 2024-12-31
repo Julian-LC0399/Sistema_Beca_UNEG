@@ -10,6 +10,7 @@ use App\Http\Controllers\StuCampusController;
 use App\Http\Controllers\StuCareerController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ExportController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,3 +28,4 @@ Route::resource('stu-becas', StuBecaController::class);
 Route::resource('caree-campuses', CareeCampusController::class);
 Route::resource('stu-careers', StuCareerController::class);
 Route::resource('stu-campuses', StuCampusController::class);
+Route::get('/export-stu-becas', [ExportController::class, 'exportToCsv'])->name('stu-becas.export');
