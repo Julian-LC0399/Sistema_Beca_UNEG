@@ -41,6 +41,7 @@
 
 									<th >Cédula del estudiante</th>
 									<th >Beca</th>
+									<th >Campus</th>
 
                                         <th></th>
                                     </tr>
@@ -52,6 +53,7 @@
 
 										<td >{{ $stuBeca->student->Identification_card }}</td>
 										<td >{{ $stuBeca->beca->Type }}</td>
+										<td >{{ \App\Models\StuCampus::where('Student_id', $stuBeca->Student_id)->first() ? \App\Models\StuCampus::where('Student_id', $stuBeca->Student_id)->first()->campus->Name : 'Sin campus' }}</td>
 
                                             <td>
                                                 <form action="{{ route('stu-becas.destroy', $stuBeca->id) }}" method="POST">

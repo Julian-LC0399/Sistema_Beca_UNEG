@@ -3,27 +3,27 @@
 
         <div class="form-group mb-2 mb20">
             <label for="first_name" class="form-label">{{ __('Primer nombre') }}</label>
-            <input type="text" name="First_name" class="form-control @error('First_name') is-invalid @enderror" value="{{ old('First_name', $student?->First_name) }}" id="first_name" placeholder="First Name">
+            <input type="text" name="First_name" class="form-control @error('First_name') is-invalid @enderror" value="{{ old('First_name', $student?->First_name) }}" id="first_name" placeholder="Nombre">
             {!! $errors->first('First_name', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
             <label for="suname" class="form-label">{{ __('Apellido') }}</label>
-            <input type="text" name="Suname" class="form-control @error('Suname') is-invalid @enderror" value="{{ old('Suname', $student?->Suname) }}" id="suname" placeholder="Suname">
+            <input type="text" name="Suname" class="form-control @error('Suname') is-invalid @enderror" value="{{ old('Suname', $student?->Suname) }}" id="suname" placeholder="Apellido">
             {!! $errors->first('Suname', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
             <label for="identification_card" class="form-label">{{ __('Cédula') }}</label>
-            <input type="text" name="Identification_card" class="form-control @error('Identification_card') is-invalid @enderror" value="{{ old('Identification_card', $student?->Identification_card) }}" id="identification_card" placeholder="Identification Card">
+            <input type="text" name="Identification_card" class="form-control @error('Identification_card') is-invalid @enderror" value="{{ old('Identification_card', $student?->Identification_card) }}" id="identification_card" placeholder="Cédula">
             {!! $errors->first('Identification_card', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
             <label for="phone" class="form-label">{{ __('Teléfono') }}</label>
-            <input type="text" name="Phone" class="form-control @error('Phone') is-invalid @enderror" value="{{ old('Phone', $student?->Phone) }}" id="phone" placeholder="Phone">
+            <input type="text" name="Phone" class="form-control @error('Phone') is-invalid @enderror" value="{{ old('Phone', $student?->Phone) }}" id="phone" placeholder="Teléfono">
             {!! $errors->first('Phone', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
             <label for="room_telephone" class="form-label">{{ __('Teléfono de habitación') }}</label>
-            <input type="text" name="Room_telephone" class="form-control @error('Room_telephone') is-invalid @enderror" value="{{ old('Room_telephone', $student?->Room_telephone) }}" id="room_telephone" placeholder="Room Telephone">
+            <input type="text" name="Room_telephone" class="form-control @error('Room_telephone') is-invalid @enderror" value="{{ old('Room_telephone', $student?->Room_telephone) }}" id="room_telephone" placeholder="Teléfono de casa">
             {!! $errors->first('Room_telephone', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
@@ -33,12 +33,12 @@
         </div>
         <div class="form-group mb-2 mb20">
             <label for="semeter" class="form-label">{{ __('Semestre') }}</label>
-            <input type="text" name="Semeter" class="form-control @error('Semeter') is-invalid @enderror" value="{{ old('Semeter', $student?->Semeter) }}" id="semeter" placeholder="Semeter">
+            <input type="text" name="Semeter" class="form-control @error('Semeter') is-invalid @enderror" value="{{ old('Semeter', $student?->Semeter) }}" id="semeter" placeholder="Semestre">
             {!! $errors->first('Semeter', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
 
     </div>
     <div class="col-md-12 mt20 mt-2">
-        <button type="submit" class="btn btn-primary">{{ __('Registar') }}</button>
+        <button type="submit" class="btn btn-primary">{{ __('Registrar') }}</button>
     </div>
 </div>

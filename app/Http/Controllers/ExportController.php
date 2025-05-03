@@ -6,22 +6,7 @@ use Illuminate\Support\Facades\Response;
 
 class ExportController extends Controller
 {
-    // public function exportToCsv()
-    // {
-    //     // Obtén los datos desde el modelo
-    //     $stuBecas = \App\Models\StuBeca::with('student', 'beca')->get()->map(function ($stuBeca) {
-    //         return [
-    //             'ID' => $stuBeca->Student_id,
-    //             'Nombre' =>  $stuBeca->student->First_name,
-    //             'Apellido' =>  $stuBeca->student->Suname,
-    //             'Cédula del estudiante' => $stuBeca->student->Identification_card,
-    //             'Telefono' =>  $stuBeca->student->Phone,
-    //             'Email' =>  $stuBeca->student->Email,
-    //             'Semestre' =>  $stuBeca->student->Semeter,
-    //             'Beca' => $stuBeca->beca->Type,
-    //             'Carrera' => $careers -> Name,
-    //         ];
-    //     });
+
 
     public function exportToCsv()
     {
@@ -33,6 +18,10 @@ class ExportController extends Controller
             // Si se encuentra el Career_id, buscar el nombre de la carrera
             $careerName = $career ? \App\Models\Career::where('id', $career->Career_id)->value('name') : 'Sin carrera';
 
+            // Buscar el campus del estudiante
+            $stuCampus = \App\Models\Stu_campus::where('Student_id', $stuBeca->Student_id)->first();
+            $campusName = $stuCampus ? \App\Models\Campus::where('id', $stuCampus->Campus_id)->value('Name') : 'Sin campus';
+
             return [
                 'ID' => $stuBeca->Student_id,
                 'Nombre' => $stuBeca->student->First_name,
@@ -42,7 +31,8 @@ class ExportController extends Controller
                 'Email' => $stuBeca->student->Email,
                 'Semestre' => $stuBeca->student->Semeter,
                 'Beca' => $stuBeca->beca->Type,
-                'Carrera' => $careerName, 
+                'Carrera' => $careerName,
+                'Campus' => $campusName,
             ];
         });
     
@@ -55,7 +45,7 @@ class ExportController extends Controller
         ob_start(); // Captura la salida del archivo en un buffer
     
         // Agregar encabezados al CSV
-        fputcsv($handle, ['ID', 'Nombre', 'Apellido', 'Cédula del estudiante', 'Telefono', 'Email', 'Semestre', 'Beca', 'Carrera']);
+        fputcsv($handle, ['ID', 'Nombre', 'Apellido', 'Cédula del estudiante', 'Telefono', 'Email', 'Semestre', 'Beca', 'Carrera', 'Campus']);
     
         // Agregar los datos al CSV
         foreach ($stuBecas as $row) {
