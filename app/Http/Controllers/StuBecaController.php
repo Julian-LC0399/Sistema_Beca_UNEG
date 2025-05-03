@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StuBecaRequest;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Models\Beca;
+use App\Models\Campus;
+use App\Models\StuCampus;
+use App\Models\Career;
+use App\Models\StuCareer;
 
 class StuBecaController extends Controller
 {
@@ -16,9 +21,33 @@ class StuBecaController extends Controller
      */
     public function index(Request $request): View
     {
-        $stuBecas = StuBeca::paginate();
+        $query = StuBeca::query();
+        
+        // Apply scholarship filter if selected
+        if ($request->has('beca_id') && $request->beca_id != '') {
+            $query->where('Beca_id', $request->beca_id);
+        }
 
-        return view('stu-beca.index', compact('stuBecas'))
+        // Apply campus filter if selected
+        if ($request->has('campus_id') && $request->campus_id != '') {
+            $studentIds = StuCampus::where('Campus_id', $request->campus_id)
+                                 ->pluck('Student_id');
+            $query->whereIn('Student_id', $studentIds);
+        }
+
+        // Apply career filter if selected
+        if ($request->has('career_id') && $request->career_id != '') {
+            $studentIds = StuCareer::where('Career_id', $request->career_id)
+                                 ->pluck('Student_id');
+            $query->whereIn('Student_id', $studentIds);
+        }
+        
+        $stuBecas = $query->paginate();
+        $becas = Beca::all(); // Get all scholarships for the filter dropdown
+        $campuses = Campus::all(); // Get all campuses for the filter dropdown
+        $careers = Career::all(); // Get all careers for the filter dropdown
+
+        return view('stu-beca.index', compact('stuBecas', 'becas', 'campuses', 'careers'))
             ->with('i', ($request->input('page', 1) - 1) * $stuBecas->perPage());
     }
 
