@@ -42,6 +42,7 @@
 									<th >Cédula del estudiante</th>
 									<th >Beca</th>
 									<th >Campus</th>
+									<th >Carrera</th>
 
                                         <th></th>
                                     </tr>
@@ -54,8 +55,12 @@
 										<td >{{ $stuBeca->student->Identification_card }}</td>
 										<td >{{ $stuBeca->beca->Type }}</td>
 										<td >{{ \App\Models\StuCampus::where('Student_id', $stuBeca->Student_id)->first() ? \App\Models\StuCampus::where('Student_id', $stuBeca->Student_id)->first()->campus->Name : 'Sin campus' }}</td>
+										<td >@php
+                                            $stuCareer = \App\Models\StuCareer::where('Student_id', $stuBeca->Student_id)->first();
+                                            echo $stuCareer ? ($stuCareer->career ? $stuCareer->career->Name : 'Sin carrera') : 'Sin carrera';
+                                        @endphp</td>
 
-                                            <td>
+                                            <!-- <td>
                                                 <form action="{{ route('stu-becas.destroy', $stuBeca->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary " href="{{ route('stu-becas.show', $stuBeca->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Ver') }}</a>
                                                     <a class="btn btn-sm btn-info" href="{{ route('stu-becas.edit', $stuBeca->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
@@ -63,7 +68,7 @@
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('¿Está seguro de borrar él registro?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i> {{ __('Borrar') }}</button>
                                                 </form>
-                                            </td>
+                                            </td> -->
                                         </tr>
                                     @endforeach
                                 </tbody>
