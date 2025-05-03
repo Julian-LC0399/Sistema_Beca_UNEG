@@ -64,8 +64,32 @@
                         </div>
                     </div>
                 </div>
-                {!! $careers->withQueryString()->links() !!}
+                <div class="d-flex justify-content-center mt-3">
+                    {!! $careers->withQueryString()->links('pagination::bootstrap-4') !!}
+                </div>
             </div>
         </div>
     </div>
+
+    <style>
+        .pagination {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .pagination li {
+            margin: 0 2px;
+        }
+        .pagination .page-item .page-link {
+            padding: 0.375rem 0.75rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            border-radius: 0.25rem;
+        }
+        .pagination .active .page-link {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+    </style>
 @endsection
