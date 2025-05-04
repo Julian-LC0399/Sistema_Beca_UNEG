@@ -56,9 +56,9 @@
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="campus_id" class="mr-2">{{ __('Filtrar por campus:') }}</label>
+                                            <label for="campus_id" class="mr-2">{{ __('Filtrar por sede:') }}</label>
                                             <select name="campus_id" id="campus_id" class="form-control">
-                                                <option value="">{{ __('Todos los campus') }}</option>
+                                                <option value="">{{ __('Todas las sedes') }}</option>
                                                 @foreach($campuses as $campus)
                                                     <option value="{{ $campus->id }}" {{ request('campus_id') == $campus->id ? 'selected' : '' }}>
                                                         {{ $campus->Name }}
