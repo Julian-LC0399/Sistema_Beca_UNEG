@@ -42,7 +42,8 @@ class StuBecaController extends Controller
             $query->whereIn('Student_id', $studentIds);
         }
         
-        $stuBecas = $query->paginate();
+        $perPage = $request->input('per_page', 10); // Default to 10 items per page
+        $stuBecas = $query->paginate($perPage);
         $becas = Beca::all(); // Get all scholarships for the filter dropdown
         $campuses = Campus::all(); // Get all campuses for the filter dropdown
         $careers = Career::all(); // Get all careers for the filter dropdown

@@ -89,7 +89,26 @@
                                 </div>
                             </form>
                         </div>
-                        <!-- End filter form -->
+                        <!-- Per page selector -->
+                        <div class="mb-3">
+                            <form method="GET" action="{{ route('stu-becas.index') }}" class="form-inline" id="perPageForm">
+                                <input type="hidden" name="beca_id" value="{{ request('beca_id') }}">
+                                <input type="hidden" name="campus_id" value="{{ request('campus_id') }}">
+                                <input type="hidden" name="career_id" value="{{ request('career_id') }}">
+                                <div class="form-group">
+                                    <label for="per_page" class="mr-2">{{ __('Mostrar:') }}</label>
+                                    <select name="per_page" id="per_page" class="form-control" onchange="document.getElementById('perPageForm').submit()">
+                                        @foreach([10, 25, 50, 100] as $perPage)
+                                            <option value="{{ $perPage }}" {{ request('per_page', 10) == $perPage ? 'selected' : '' }}>
+                                                {{ $perPage }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                    <span class="ml-2">{{ __('elementos por página') }}</span>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- End per page selector -->
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
@@ -159,6 +178,14 @@
         .pagination .active .page-link {
             background-color: #007bff;
             border-color: #007bff;
+        }
+        #per_page {
+            width: auto;
+            display: inline-block;
+        }
+        .form-inline {
+            display: flex;
+            align-items: center;
         }
     </style>
 @endsection
