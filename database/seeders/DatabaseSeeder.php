@@ -27,17 +27,19 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('12345678'),
         ]);
 
-        // Crear campus
-        $campuses = Campus::factory(3)->create();
+        // Crear campus usando el seeder personalizado
+        $this->call(CampusSeeder::class);
+        $campuses = Campus::all();
 
-        // Crear carreras
-        $careers = Career::factory(5)->create();
+        // Crear carreras usando el seeder personalizado
+        $this->call(CareerSeeder::class);
+        $careers = Career::all();
 
         // Crear becas
         $becas = Beca::factory(4)->create();
 
-        // Crear 50 estudiantes con sus relaciones
-        Student::factory(50)->create()->each(function ($student) use ($campuses, $careers, $becas) {
+        // Crear 200 estudiantes con sus relaciones
+        Student::factory(200)->create()->each(function ($student) use ($campuses, $careers, $becas) {
             try {
                 // Asignar un campus aleatorio
                 StuCampus::create([
@@ -51,8 +53,8 @@ class DatabaseSeeder extends Seeder
                     'Career_id' => $careers->random()->id,
                 ]);
 
-                // Asignar una beca aleatoria (70% de probabilidad)
-                if (rand(1, 100) <= 70) {
+                // Asignar una beca aleatoria (80% de probabilidad)
+                if (rand(1, 100) <= 80) {
                     StuBeca::create([
                         'Student_id' => $student->id,
                         'Beca_id' => $becas->random()->id,

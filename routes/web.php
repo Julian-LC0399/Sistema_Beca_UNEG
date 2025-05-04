@@ -20,12 +20,15 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('becas', BecaController::class);
-Route::resource('students', StudentController::class);
-Route::resource('campuses', CampusController::class);
-Route::resource('careers', CareerController::class);
-Route::resource('stu-becas', StuBecaController::class);
-Route::resource('caree-campuses', CareeCampusController::class);
-Route::resource('stu-careers', StuCareerController::class);
-Route::resource('stu-campuses', StuCampusController::class);
-Route::get('/export-stu-becas', [ExportController::class, 'exportToCsv'])->name('stu-becas.export');
+// Rutas protegidas que requieren autenticación
+Route::middleware(['auth'])->group(function () {
+    Route::resource('becas', BecaController::class);
+    Route::resource('students', StudentController::class);
+    Route::resource('campuses', CampusController::class);
+    Route::resource('careers', CareerController::class);
+    Route::resource('stu-becas', StuBecaController::class);
+    Route::resource('caree-campuses', CareeCampusController::class);
+    Route::resource('stu-careers', StuCareerController::class);
+    Route::resource('stu-campuses', StuCampusController::class);
+    Route::get('/export-stu-becas', [ExportController::class, 'exportToCsv'])->name('stu-becas.export');
+});
