@@ -3,8 +3,8 @@
 
         <div class="form-group mb-2 mb20">
             <label for="type" class="form-label">{{ __('Tipo') }}</label>
-            <input type="text" name="Type" class="form-control @error('Type') is-invalid @enderror" value="{{ old('Type', $beca?->Type) }}" id="type" placeholder="Type">
-            {!! $errors->first('Type', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+            <input type="text" name="Type" class="form-control @error('Type') is-invalid @enderror" value="{{ old('Type', $beca?->Type) }}" id="type" placeholder="Ingrese el tipo de beca">
+            {!! $errors->first('Type', '<div class="invalid-feedback" role="alert"><strong>El campo tipo es obligatorio</strong></div>') !!}
         </div>
 
     </div>

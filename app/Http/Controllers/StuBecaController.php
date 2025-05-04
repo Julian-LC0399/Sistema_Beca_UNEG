@@ -57,8 +57,9 @@ class StuBecaController extends Controller
     public function create(): View
     {
         $stuBeca = new StuBeca();
+        $becas = Beca::all();
 
-        return view('stu-beca.create', compact('stuBeca'));
+        return view('stu-beca.create', compact('stuBeca', 'becas'));
     }
 
     /**
@@ -88,8 +89,9 @@ class StuBecaController extends Controller
     public function edit($id): View
     {
         $stuBeca = StuBeca::find($id);
+        $becas = Beca::all();
 
-        return view('stu-beca.edit', compact('stuBeca'));
+        return view('stu-beca.edit', compact('stuBeca', 'becas'));
     }
 
     /**
@@ -97,7 +99,20 @@ class StuBecaController extends Controller
      */
     public function update(StuBecaRequest $request, StuBeca $stuBeca): RedirectResponse
     {
-        $stuBeca->update($request->validated());
+        // Buscar el estudiante por cédula
+        $student = \App\Models\Student::where('Identification_card', $request->identification_card)->first();
+        
+        if (!$student) {
+            return Redirect::back()
+                ->withInput()
+                ->withErrors(['identification_card' => 'No se encontró un estudiante con esta cédula.']);
+        }
+
+        // Actualizar la beca del estudiante
+        $stuBeca->update([
+            'Student_id' => $student->id,
+            'Beca_id' => $request->Beca_id
+        ]);
 
         return Redirect::route('stu-becas.index')
             ->with('success', 'Registro actualizado correctamente.');
