@@ -35,8 +35,9 @@ class DatabaseSeeder extends Seeder
         $this->call(CareerSeeder::class);
         $careers = Career::all();
 
-        // Crear becas
-        $becas = Beca::factory(4)->create();
+        // Crear becas usando el seeder personalizado
+        $this->call(BecaSeeder::class);
+        $becas = Beca::all();
 
         // Crear 200 estudiantes con sus relaciones
         Student::factory(200)->create()->each(function ($student) use ($campuses, $careers, $becas) {
