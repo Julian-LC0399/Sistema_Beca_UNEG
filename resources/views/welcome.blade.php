@@ -106,9 +106,15 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="feature-card">
+                    <div class="feature-card" onclick="window.open('https://servicio.uneg.edu.ve/sde/principal/login.php', '_blank')" style="cursor: pointer;">
                         <h3>Sistema de Desarrollo Estudiantil</h3>
                         <p>Gestiona tu solicitud de beca de manera fácil y rápida a través de nuestra plataforma.</p>
+                    </div>
+                </div>
+                                <div class="col-md-4">
+                    <div class="feature-card" onclick="window.open('https://uneg.edu.ve/', '_blank')" style="cursor: pointer;">
+                        <h3>UNEG</h3>
+                        <p>Dirigete a la página principal de la UNEG</p>
                     </div>
                 </div>
                 </div>
