@@ -113,7 +113,7 @@
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>ID</th>
+                                        <!-- <th>ID</th> -->
 
 									<th >Cédula del estudiante</th>
 									<th >Beca</th>
@@ -126,7 +126,7 @@
                                 <tbody>
                                     @foreach ($stuBecas as $stuBeca)
                                         <tr>
-                                            <td>{{ ++$i }}</td>
+                                            <!-- <td>{{ ++$i }}</td> -->
 
 										<td >{{ $stuBeca->student->Identification_card }}</td>
 										<td >{{ $stuBeca->beca->Type }}</td>
