@@ -11,6 +11,8 @@ class StudentFactory extends Factory
 
     public function definition()
     {
+        $this->faker->locale('es_ES');
+        
         return [
             'First_name' => $this->faker->firstName(),
             'Suname' => $this->faker->lastName(),
